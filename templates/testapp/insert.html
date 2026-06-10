@@ -1,0 +1,25 @@
+{% extends 'testapp/base.html' %}
+
+{% block title %}
+<title>Employee Insert Page</title>
+{% endblock title %}
+
+{% block styleBlock %}
+<style>
+    .fs-7 { font-size: 0.75rem; }
+    .tracking-wider { letter-spacing: 0.05em; }
+    .table-hover tbody tr:hover { background-color: rgba(248, 249, 250, 0.85); }
+    .transition-all { transition: background-color 0.15s ease-in-out; }
+</style>
+{% endblock styleBlock %}
+
+{% block body_block %}
+
+<h1>Employee Insert Page.</h1>
+<form method="post">
+
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Insert Record">
+</form>
+{% endblock %}

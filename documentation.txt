@@ -1,0 +1,10 @@
+CBV and CRUD operations by using CBV and FBV
+------------------------------------------------------
+
+CBV --> Class Base View
+FBV --> Function Base View
+
+C --> Create(Insert Operation)
+R --> Read / Retrive(select qurey)
+U --> Update(update)
+D --> Delete(delete)
