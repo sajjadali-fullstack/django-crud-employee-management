@@ -2,6 +2,24 @@
 
 Aura HQ Ledger is an executive-tier, full-stack Python Django application designed for high-end corporate workforce registry and internal data management. Moving away from standard unstyled layouts, this system integrates a carefully curated luxury visual identity utilizing sophisticated typography pairings, a tailored jewel-toned color architecture, and ultra-responsive client-side DOM processing.
 
+# Aura HQ Ledger ── Premium Workforce Directory & Data Engine
+
+<p align="center">
+  <img src="assets/banner.png" alt="Aura HQ Ledger Banner" width="100%" />
+</p>
+
+Sana HQ Ledger is an executive-tier, full-stack Python Django application engineered for high-end corporate workforce registry and automated database testing. Moving away from standard unstyled layouts, this system integrates a carefully curated luxury visual identity driven by a real-time JavaScript indexing engine, backed by a robust Django MVT core capable of mass dynamic data seeding.
+
+---
+
+## 📸 Interface Preview
+
+<p align="center">
+  <img src="assets/dashboard-preview.png" alt="Sana HQ Ledger Main Dashboard Preview" width="100%" />
+</p>
+
+---
+
 ## ✨ Key Architectural Features
 
 * **Robust Django Core:** Clean Model-View-Template (MVT) architecture managing atomic CRUD transactions securely.
