@@ -21,5 +21,8 @@ from testapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.retrive_view, name='retrive'),
+    path('base/', views.base_view, name='base'),
     path('insert/', views.insert_view, name='insert'),
+    path('update/<int:id>', views.update_view, name='update'),
+    path('delete/<int:id>', views.delete_view, name='delete'),
 ]

@@ -1,65 +1,215 @@
 {% extends 'testapp/base.html' %}
 
-{% block title %}CRUD Projects{% endblock %}
+{% block title %}CRUD Projects | Executive Directory{% endblock %}
+
+{% block styleBlock %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+    /* Premium Identity Sync */
+    body {
+        background-color: #fcfbfa; /* Warm off-white background */
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: #1a1a1a;
+    }
+
+    .luxury-heading {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        color: #111111;
+    }
+
+    .luxury-sub {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #8a817c;
+        font-weight: 500;
+    }
+
+    /* Master Table Container */
+    .luxury-table-card {
+        background: #ffffff;
+        border: 1px solid rgba(230, 224, 217, 0.7);
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(143, 134, 124, 0.04);
+    }
+
+    /* Elegant Table Styling */
+    .table thead {
+        background-color: #fdfdfd;
+    }
+    
+    .table th {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        color: #8a817c !important;
+        border-bottom: 1px solid #e6e0d9 !important;
+    }
+
+    .table td {
+        padding-top: 1.15rem !important;
+        padding-bottom: 1.15rem !important;
+        border-bottom: 1px solid rgba(230, 224, 217, 0.5);
+    }
+
+    /* Custom rows hover state with soft warm glow */
+    .table-hover tbody tr {
+        transition: background-color 0.25s ease;
+    }
+    .table-hover tbody tr:hover {
+        background-color: rgba(197, 168, 128, 0.03) !important;
+    }
+
+    /* Luxury Badges & Text styles */
+    .emp-id-badge {
+        background-color: #f5f2eb;
+        color: #5e5751;
+        border: 1px solid #e6e0d9;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        padding: 0.35rem 0.65rem;
+        border-radius: 6px;
+    }
+
+    .luxury-salary {
+        color: #4a5d4e; /* Sophisticated sage/emerald instead of neon green */
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    /* Buttons Suite */
+    .btn-luxury-primary {
+        background-color: #111111; /* Obsidian Black */
+        color: #ffffff;
+        border: 1px solid #111111;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        border-radius: 8px;
+        transition: all 0.25s ease;
+    }
+    .btn-luxury-primary:hover {
+        background-color: #c5a880; /* Champagne Gold */
+        border-color: #c5a880;
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 15px rgba(197, 168, 128, 0.25);
+    }
+
+    /* Table Action Links */
+    .action-link-edit {
+        color: #4a4541;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 0.4rem 0.75rem;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+    }
+    .action-link-edit:hover {
+        background-color: rgba(197, 168, 128, 0.1);
+        color: #c5a880;
+    }
+
+    .action-link-delete {
+        color: #a37a7a;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 0.4rem 0.75rem;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+    }
+    .action-link-delete:hover {
+        background-color: rgba(163, 122, 122, 0.08);
+        color: #804040;
+    }
+</style>
+{% endblock styleBlock %}
 
 {% block bodyBlock %}
-<div class="container my-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-            <h1 class="display-6 fw-bold text-dark mb-1">Employee Directory</h1>
-            <p class="text-muted mb-0">Manage and oversee your organization's workforce records.</p>
+<div class="container py-5 mt-3">
+    
+    <div class="row align-items-center mb-5">
+        <div class="col-md-7 mb-3 mb-md-0">
+            <span class="luxury-sub d-block mb-2">Internal Ledger</span>
+            <h1 class="luxury-heading display-5 mb-2">Employee Directory</h1>
+            <p class="text-muted small mb-0" style="max-width: 500px;">Oversee organizational architecture, review financial compensation bands, and safely update active workforce records.</p>
         </div>
-        <div>
-            <a class="btn btn-success btn-lg shadow-sm px-4 d-inline-flex align-items-center gap-2" href="/insert">
-                <i class="bi bi-person-plus-fill"></i> Insert New Employee
+        <div class="col-md-5 text-md-end">
+            <a class="btn btn-luxury-primary shadow-sm px-4 py-2.5 d-inline-flex align-items-center gap-2" href="/insert">
+                <i class="ri-user-add-line"></i> Appoint New Employee
             </a>
         </div>
     </div>
 
-    <div class="card shadow-sm border-0 rounded-3 overflow-hidden">
+    <div class="card luxury-table-card border-0 overflow-hidden">
         <div class="table-responsive">
             <table class="table table-hover align-middle mb-0">
-                <thead class="table-light text-secondary border-bottom">
+                <thead>
                     <tr>
-                        <th class="ps-4 py-3 text-uppercase fs-7 fw-semibold tracking-wider">Unique ID</th>
-                        <th class="py-3 text-uppercase fs-7 fw-semibold tracking-wider">Employee ID</th>
-                        <th class="py-3 text-uppercase fs-7 fw-semibold tracking-wider">Employee Name</th>
-                        <th class="py-3 text-uppercase fs-7 fw-semibold tracking-wider">Salary</th>
-                        <th class="py-3 text-uppercase fs-7 fw-semibold tracking-wider">City</th>
-                        <th class="pe-4 py-3 text-end text-uppercase fs-7 fw-semibold tracking-wider">Actions</th>
+                        <th class="ps-4 py-3">Unique ID</th>
+                        <th class="py-3">Employee ID</th>
+                        <th class="py-3">Employee Name</th>
+                        <th class="py-3">Salary</th>
+                        <th class="py-3">City Assignment</th>
+                        <th class="pe-4 py-3 text-end">Management</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for emp in emp_list %}
-                    <tr class="transition-all">
-                        <td class="ps-4 fw-medium text-secondary">#{{ emp.id }}</td>
-                        <td>
-                            <span class="badge bg-light text-dark border px-2 py-1.5 fw-semibold">{{ emp.emp_no }}</span>
+                    <tr>
+                        <td class="ps-4 text-muted small" style="font-weight: 500;">
+                            #{{ emp.id }}
                         </td>
+                        
                         <td>
-                            <div class="fw-semibold text-dark">{{ emp.emp_name }}</div>
+                            <span class="emp-id-badge">{{ emp.emp_no }}</span>
                         </td>
-                        <td class="text-success fw-medium">${{ emp.emp_sal }}</td>
+                        
                         <td>
-                            <span class="text-muted"><i class="bi bi-geo-alt me-1"></i>{{ emp.emp_addr }}</span>
+                            <div class="fw-semibold text-dark" style="letter-spacing: -0.01em;">{{ emp.emp_name }}</div>
                         </td>
+                        
+                        <td>
+                            <span class="luxury-salary">${{ emp.emp_sal }}</span>
+                        </td>
+                        
+                        <td>
+                            <span class="text-muted small d-inline-flex align-items-center">
+                                <i class="ri-map-pin-2-line text-opacity-70 me-1.5" style="color: #c5a880;"></i>{{ emp.emp_addr }}
+                            </span>
+                        </td>
+                        
                         <td class="pe-4 text-end">
-                            <div class="d-inline-flex gap-2">
-                                <a class="btn btn-outline-primary btn-sm px-3" href="update/{{ emp.id }}">
-                                    Edit
+                            <div class="d-inline-flex gap-1">
+                                <a class="action-link-edit" href="update/{{ emp.id }}">
+                                    <i class="ri-edit-line me-1 align-bottom"></i> Edit
                                 </a>
-                                <a class="btn btn-outline-danger btn-sm px-3" href="delete/{{ emp.id }}" onclick="return confirm('Are you sure you want to delete this employee?');">
-                                    Delete
+                                <a class="action-link-delete" href="delete/{{ emp.id }}" onclick="return confirm('Are you sure you want to permanently remove this record?');">
+                                    <i class="ri-delete-bin-line me-1 align-bottom"></i> Delete
                                 </a>
                             </div>
                         </td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="6" class="text-center py-5 text-muted">
-                            <i class="bi bi-people display-4 d-block mb-3 text-black-50"></i>
-                            <span class="fs-5 fw-medium">No records found</span>
-                            <p class="small text-secondary mb-0">Get started by creating a new employee profile.</p>
+                        <td colspan="6" class="text-center py-5 my-4">
+                            <div class="py-4">
+                                <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-3" style="width: 70px; height: 70px; background: #fdfdfd !important; border: 1px solid #e6e0d9;">
+                                    <i class="ri-team-line fs-2" style="color: #c5a880;"></i>
+                                </div>
+                                <h3 class="luxury-heading h5 mb-2">No Active Personnel</h3>
+                                <p class="text-muted small mx-auto mb-0" style="max-width: 320px;">The workforce registry is currently empty. Initialize the directory by appointing an employee profile.</p>
+                            </div>
                         </td>
                     </tr>
                     {% endfor %}
@@ -68,6 +218,4 @@
         </div>
     </div>
 </div>
-
-
 {% endblock %}

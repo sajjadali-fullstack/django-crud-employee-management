@@ -1,0 +1,179 @@
+{% extends 'testapp/base.html' %}
+
+{% block title %}
+<title>Premium Employee Portal | Update Record</title>
+{% endblock title %}
+
+{% block styleBlock %}
+<!-- Google Fonts for a high-end editorial feel -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Remix Icons for crisp, luxury line iconography -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+    /* Global refinement for the luxury theme */
+    body {
+        background-color: #fcfbfa; /* Warm off-white */
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: #1a1a1a;
+    }
+
+    /* Luxury Editorial Headers */
+    .luxury-heading {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        color: #111111;
+    }
+
+    .luxury-sub {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #8a817c;
+        font-weight: 500;
+    }
+
+    /* The Premium Card Container */
+    .luxury-card {
+        background: #ffffff;
+        border: 1px solid rgba(230, 224, 217, 0.7); /* Ultra-soft warm border */
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(143, 134, 124, 0.04), 
+                    0 1px 3px rgba(0, 0, 0, 0.01);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Formatting Django's default {{ form.as_p }} into premium elements */
+    .luxury-card p {
+        margin-bottom: 1.75rem;
+        position: relative;
+    }
+
+    .luxury-card label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        color: #4a4541;
+        margin-bottom: 0.6rem;
+        display: block;
+    }
+
+    /* Form Fields reimagined */
+    .luxury-card input[type="text"], 
+    .luxury-card input[type="number"], 
+    .luxury-card input[type="email"], 
+    .luxury-card select, 
+    .luxury-card textarea {
+        display: block;
+        width: 100%;
+        padding: 0.85rem 1.2rem;
+        font-size: 0.95rem;
+        color: #1a1a1a;
+        background-color: #fdfdfd;
+        border: 1px solid #e6e0d9;
+        border-radius: 8px;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Focus state: Subtle champagne gold glow instead of harsh blue */
+    .luxury-card input:focus, 
+    .luxury-card select:focus, 
+    .luxury-card textarea:focus {
+        background-color: #ffffff;
+        border-color: #c5a880; /* Champagne Gold tone */
+        outline: 0;
+        box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.12);
+    }
+
+    /* Custom Premium Button styling */
+    .btn-luxury {
+        background-color: #111111; /* Sharp Obsidian Black */
+        color: #ffffff;
+        border: 1px solid #111111;
+        padding: 0.85rem 2rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        border-radius: 8px;
+        transition: all 0.25s ease;
+    }
+
+    .btn-luxury:hover {
+        background-color: #c5a880; /* Shifts smoothly to gold */
+        border-color: #c5a880;
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(197, 168, 128, 0.25);
+    }
+
+    .btn-luxury-cancel {
+        color: #8a817c;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+    .btn-luxury-cancel:hover {
+        color: #111111;
+    }
+
+    /* Custom divider line */
+    .luxury-divider {
+        height: 1px;
+        background: linear-gradient(to right, rgba(197, 168, 128, 0.4), rgba(197, 168, 128, 0.05));
+        border: none;
+    }
+</style>
+{% endblock styleBlock %}
+
+
+{% block bodyBlock %}
+<div class="container py-5 mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            
+            <!-- Breadcrumb Navigation -->
+            <div class="d-flex justify-content-between align-items-center mb-4 px-2">
+                <span class="luxury-sub"><i class="ri-shield-user-line me-1"></i> Executive Management</span>
+                <span class="text-muted small">ID: Profile Sync</span>
+            </div>
+
+            <!-- Luxury Container Card -->
+            <div class="card luxury-card p-4 p-md-5">
+                
+                <!-- Card Header -->
+                <div class="mb-4">
+                    <h1 class="luxury-heading display-6 mb-2">Update Employee Ledger</h1>
+                    <p class="text-muted small mb-0" style="font-family: 'Plus Jakarta Sans';">Amend existing staff credentials and profile records securely.</p>
+                </div>
+                
+                <hr class="luxury-divider mb-5">
+
+                <!-- The Form -->
+                <form action="" method="post" novalidate>
+                    {% csrf_token %}
+                    
+                    <div class="form-fields-wrapper">
+                        {{ form.as_p }}
+                    </div>
+                    
+                    <!-- Action Elements -->
+                    <div class="d-flex align-items-center justify-content-end gap-4 mt-5 pt-3">
+                        <a href="#" class="btn btn-link text-decoration-none btn-luxury-cancel p-0">
+                            Cancel Changes
+                        </a>
+                        <button type="submit" class="btn btn-luxury d-inline-flex align-items-center gap-2">
+                            Update Record <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </div>
+                </form>
+                
+            </div> <!-- /luxury-card -->
+
+        </div>
+    </div>
+</div>
+{% endblock bodyBlock %}

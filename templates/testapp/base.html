@@ -1,29 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}
-    <title>Base </title>
-    {% endblock title %}
-    <!-- Boostrap CDN -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-     {% block styleBlock %}
-     <style>
-        body{
-            
-            text-align: center;
-            align-items: center;
-            background-color: rgb(230, 230, 230);
+
+    <title>{% block title %}Executive Portal{% endblock title %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    {% block styleBlock %}
+    {% endblock styleBlock %}
+
+    <style>
+        body {
+            background-color: #fcfbfa;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-     </style>
-     {% endblock styleBlock %}
 
+        .luxury-navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid rgba(230, 224, 217, 0.7);
+            padding: 0.8rem 2rem;
+            box-shadow: 0 4px 20px rgba(143, 134, 124, 0.02);
+        }
+
+        .navbar-brand-luxury {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #111111 !important;
+            letter-spacing: -0.01em;
+            text-decoration: none;
+        }
+
+        .navbar-brand-luxury span {
+            color: #c5a880;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .nav-link-luxury {
+            color: #8a817c !important;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link-luxury:hover,
+        .nav-link-luxury.active {
+            color: #111111 !important;
+        }
+
+        /* Luxury Global Search Style */
+        .nav-search-wrapper {
+            position: relative;
+            max-width: 240px;
+        }
+
+        .nav-search-input {
+            background-color: #f8f6f2;
+            border: 1px solid #e6e0d9;
+            border-radius: 30px;
+            padding: 0.4rem 1rem 0.4rem 2.2rem;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-search-input:focus {
+            background-color: #ffffff;
+            border-color: #c5a880;
+            box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.15);
+            outline: none;
+        }
+
+        .nav-search-icon {
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a19791;
+            font-size: 0.9rem;
+        }
+
+        /* User Profile Pill */
+        .user-profile-pill {
+            background-color: #111111;
+            color: #ffffff;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .user-profile-pill:hover {
+            background-color: #c5a880;
+            color: white;
+        }
+
+        .user-avatar {
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        .luxury-footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(230, 224, 217, 0.4);
+            padding: 1.5rem 0;
+            font-size: 0.8rem;
+            color: #8a817c;
+            letter-spacing: 0.03em;
+        }
+    </style>
 </head>
-<body>
-    {% block bodyBlock %}
 
-    <h1>Base </h1>
-    {% endblock bodyBlock %}
+<body>
+
+    <nav class="navbar navbar-expand-lg luxury-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand-luxury" href="/">
+                AURA <span>HQ Ledger</span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#luxuryNav">
+                <i class="ri-menu-line text-dark"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="luxuryNav">
+                <ul class="navbar-nav mx-auto gap-4 mt-3 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-luxury active" href="/"><i class="ri-dashboard-line me-1"></i>
+                            Directory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-luxury" href="/insert"><i class="ri-user-add-line me-1"></i>
+                            Appoint</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-3 mt-2 mt-lg-0">
+                    <!-- Global Search Bar -->
+                    <div class="nav-search-wrapper d-none d-md-block">
+                        <i class="ri-search-line nav-search-icon"></i>
+                        <!-- Added id="directorySearch" here -->
+                        <input type="text" id="directorySearch" class="form-control nav-search-input"
+                            placeholder="Search ledger...">
+                    </div>
+
+                   
+
+                    <a href="#" class="user-profile-pill">
+                        <span class="user-avatar">A</span>
+                        <span>Admin Portal</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-shrink-0">
+        {% block bodyBlock %}
+        {% endblock bodyBlock %}
+    </main>
+
+    <footer class="luxury-footer text-center bg-white">
+        <div class="container">
+            &copy; 2026 Aura Systems International. Institutional Workspace.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Real-Time Luxury Search & Highlighting Engine -->
+    <script>
+        document.getElementById('directorySearch').addEventListener('input', function (e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            // Target the table rows in your directory
+            const rows = document.querySelectorAll('.luxury-table-card tbody tr');
+
+            rows.forEach(row => {
+                // We don't want to break the empty state row if it's showing
+                if (row.querySelector('td[colspan]')) return;
+
+                const nameElement = row.querySelector('.fw-semibold.text-dark');
+                if (!nameElement) return;
+
+                const originalText = nameElement.textContent;
+                const textLower = originalText.toLowerCase();
+
+                if (searchTerm === '') {
+                    // Reset everything if search is empty
+                    nameElement.innerHTML = originalText;
+                    row.style.display = '';
+                } else if (textLower.includes(searchTerm)) {
+                    // Show row if it matches
+                    row.style.display = '';
+
+                    // Find where the match starts and ends
+                    const matchStart = textLower.indexOf(searchTerm);
+                    const matchEnd = matchStart + searchTerm.length;
+
+                    // Rebuild the text wrapping the searched part in a luxury gold highlight span
+                    const before = originalText.substring(0, matchStart);
+                    const match = originalText.substring(matchStart, matchEnd);
+                    const after = originalText.substring(matchEnd);
+
+                    nameElement.innerHTML = `${before}<span style="background-color: rgba(197, 168, 128, 0.3); color: #111111; padding: 0 4px; border-radius: 4px; font-weight: 700;">${match}</span>${after}`;
+                } else {
+                    // Hide row if it doesn't match
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
