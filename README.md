@@ -45,10 +45,22 @@ Aura HQ Ledger is an executive-tier, full-stack Python Django application design
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg" width="40" alt="Django" />
       <br /><sub><b>Django</b></sub>
     </td>
+   
     <td align="center" width="90">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" alt="HTML5" />
       <br /><sub><b>HTML5</b></sub>
     </td>
+
+    <td align="center" width="90">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" alt="CSS3" />
+  <br /><sub><b>CSS3</b></sub>
+  </td>
+  
+  <td align="center" width="90">
+  <i class="ri-javascript-line" style="font-size: 40px; color: #F7DF1E;"></i>
+  <br /><sub><b>JavaScript</b></sub>
+  </td>
+  
     <td align="center" width="90">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="40" alt="bootstrap" />
       <br /><sub><b>Crispy Bootstrap5  (via CDN)</b></sub>
