@@ -15,16 +15,7 @@ Aura HQ Ledger is an executive-tier, full-stack Python Django application design
 * **Backend:** Python 3.11+ / Django 5.x
 * **Frontend:** HTML5, CSS3, Bootstrap 5.3.2, Remix Icons
 * **Engine:** Vanilla JavaScript (ES6)
-* **Database:** SQLite (Development default)
-
-## 🚀 Local Deployment Setup
-
-Ensure you have Python installed, then execute the following steps inside your terminal:
-
-1. **Clone the Asset Layer:**
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/aura-hq-ledger.git](https://github.com/YOUR_USERNAME/aura-hq-ledger.git)
-   cd aura-hq-ledger
+* **Database:** SQLite
 
 
 ---
