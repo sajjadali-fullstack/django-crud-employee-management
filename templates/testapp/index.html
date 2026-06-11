@@ -56,7 +56,7 @@
     .table td {
         padding-top: 1.15rem !important;
         padding-bottom: 1.15rem !important;
-        border-bottom: 1px solid rgba(230, 224, 217, 0.5);
+        border-bottom: 1px solid rgba(230, 224, 217, 0.5) !important;
     }
 
     /* Custom rows hover state with soft warm glow */
@@ -80,9 +80,20 @@
     }
 
     .luxury-salary {
-        color: #4a5d4e; /* Sophisticated sage/emerald instead of neon green */
+        color: #2e7d32 !important; /* Proper Deep Emerald Green for clear visibility */
         font-weight: 600;
         font-size: 0.95rem;
+    }
+
+    /* Premium City Badge */
+    .city-badge {
+        background-color: #eef2f7;
+        color: #3b5998;
+        border: 1px solid #dce4ec;
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.35rem 0.65rem;
+        border-radius: 6px;
     }
 
     /* Buttons Suite */
@@ -104,33 +115,39 @@
         box-shadow: 0 6px 15px rgba(197, 168, 128, 0.25);
     }
 
-    /* Table Action Links */
+    /* Table Action Links Turned into Solid Badges */
     .action-link-edit {
-        color: #4a4541;
-        font-size: 0.85rem;
-        font-weight: 500;
+        background-color: #f5f2eb;
+        color: #8f7e6b !important;
+        font-size: 0.8rem;
+        font-weight: 600;
         text-decoration: none;
         padding: 0.4rem 0.75rem;
         border-radius: 6px;
+        border: 1px solid #e6e0d9;
         transition: all 0.2s ease;
     }
     .action-link-edit:hover {
-        background-color: rgba(197, 168, 128, 0.1);
-        color: #c5a880;
+        background-color: #c5a880;
+        color: #ffffff !important;
+        border-color: #c5a880;
     }
 
     .action-link-delete {
-        color: #a37a7a;
-        font-size: 0.85rem;
-        font-weight: 500;
+        background-color: #fdf2f2;
+        color: #c53030 !important;
+        font-size: 0.8rem;
+        font-weight: 600;
         text-decoration: none;
         padding: 0.4rem 0.75rem;
         border-radius: 6px;
+        border: 1px solid #f8b4b4;
         transition: all 0.2s ease;
     }
     .action-link-delete:hover {
-        background-color: rgba(163, 122, 122, 0.08);
-        color: #804040;
+        background-color: #c53030;
+        color: #ffffff !important;
+        border-color: #c53030;
     }
 </style>
 {% endblock styleBlock %}
@@ -184,13 +201,13 @@
                         </td>
                         
                         <td>
-                            <span class="text-muted small d-inline-flex align-items-center">
-                                <i class="ri-map-pin-2-line text-opacity-70 me-1.5" style="color: #c5a880;"></i>{{ emp.emp_addr }}
+                            <span class="city-badge d-inline-flex align-items-center">
+                                <i class="ri-map-pin-2-line me-1" style="color: #3b5998;"></i>{{ emp.emp_addr }}
                             </span>
                         </td>
                         
                         <td class="pe-4 text-end">
-                            <div class="d-inline-flex gap-1">
+                            <div class="d-inline-flex gap-2">
                                 <a class="action-link-edit" href="update/{{ emp.id }}">
                                     <i class="ri-edit-line me-1 align-bottom"></i> Edit
                                 </a>
