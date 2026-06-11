@@ -2,23 +2,36 @@
 
 Aura HQ Ledger is an executive-tier, full-stack Python Django application designed for high-end corporate workforce registry and internal data management. Moving away from standard unstyled layouts, this system integrates a carefully curated luxury visual identity utilizing sophisticated typography pairings, a tailored jewel-toned color architecture, and ultra-responsive client-side DOM processing.
 
-# Aura HQ Ledger ── Premium Workforce Directory & Data Engine
+# Sajjad HQ Ledger ── Premium Workforce Directory & Data Engine
 
 <p align="center">
-  <img src="assets/banner.png" alt="Aura HQ Ledger Banner" width="100%" />
+  <img src="assets/banner.png" alt="Sajjad HQ Ledger Banner" width="100%" />
 </p>
 
-Sana HQ Ledger is an executive-tier, full-stack Python Django application engineered for high-end corporate workforce registry and automated database testing. Moving away from standard unstyled layouts, this system integrates a carefully curated luxury visual identity driven by a real-time JavaScript indexing engine, backed by a robust Django MVT core capable of mass dynamic data seeding.
+Sajjad HQ Ledger is an executive-tier, full-stack Python Django application engineered for high-end corporate workforce registry and automated database testing. Moving away from standard unstyled layouts, this system integrates a carefully curated luxury visual identity driven by a real-time JavaScript indexing engine, backed by a robust Django MVT core capable of mass dynamic data seeding.
 
 ---
 
 ## 📸 Interface Preview
 
-<p align="center">
-  <img src="assets/dashboard-preview.png" alt="Sana HQ Ledger Main Dashboard Preview" width="100%" />
-</p>
-
----
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <p align="center"><b>Main Executive Directory</b></p>
+      <img src="assets/dashboard.png" alt="Sajjad HQ Ledger Main Dashboard" width="100%" />
+    </td>
+    <td width="50%" valign="top">
+      <p align="center"><b>Personnel Appointment Form</b></p>
+      <img src="assets/insert.png" alt="Sajjad HQ Ledger Insert Form" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" width="100%" valign="top">
+      <p align="center"><b>Real-Time Index Filtering Engine</b></p>
+      <img src="assets/search.png" alt="Sajjad HQ Ledger Real-Time Search Matcher" width="100%" />
+    </td>
+  </tr>
+</table>
 
 ## ✨ Key Architectural Features
 
