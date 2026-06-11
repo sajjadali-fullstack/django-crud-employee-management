@@ -31,7 +31,6 @@ Aura HQ Ledger is an executive-tier, full-stack Python Django application design
 * **Jewel-Toned Visual Priority:** Critical data parameters (Salaries, Designations, Regions) utilize muted emerald, sapphire, and topaz badge variants to maintain maximum data scannability.
 * **Fluid UX Micro-Interactions:** Custom input-glow behavior and structural hover transitions built directly into Django's `.as_p` form wrapper.
 
-## 🛠️ Stack Composition
 
 ## 🛠️ Tech Stack & Features
 
